@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { AppBar, IconButton } from '@material-ui/core';
 import { useWallet } from '@solana/wallet-adapter-react';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -23,8 +23,6 @@ export interface HeaderProps {
 const NAV_LINKS_LIST = [
   { label: 'Home', target: routes.HOME },
   { label: 'Explore', target: routes.RAFFLES },
-  { label: 'Stake', target: routes.STAKE },
-  { label: 'Tools', target: routes.TOOLS },
   { label: 'Admin Panel', target: routes.ADMIN.HOME, admin: true },
 ];
 
