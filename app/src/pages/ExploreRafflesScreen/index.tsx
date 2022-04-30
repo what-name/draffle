@@ -12,6 +12,8 @@ import FilterBar from './components/FilterBar';
 import floateesLogo from '../../assets/floateesLogo.gif';
 
 const ExploreRafflesScreen: FC = () => {
+  console.log(process.env.NODE_ENV);
+  console.log(process.env.REACT_APP_TESTING);
   const { device } = useViewport();
   const classes = useStyles({ device });
   const { publicKey } = useWallet();
