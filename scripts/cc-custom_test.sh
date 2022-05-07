@@ -195,37 +195,81 @@ spl-token 29a6AWBP44QUnfZKNpWSU7tkfrfDBym94EtCZBPvJ2ao (deployer-keypair authori
 raffle address CU7ZkyUfKnxYjUY1Lo71sez2D1AJLqGoTbWtuUAst1qq (ended, still)
 raffle address Aq5cZhbR28TYqt9SVAopGQVq5Q64BLmZE3kURxCHuv3U
 
+# QUACK RAFFLE
+target/debug/draffle create-raffle \
+        ENNuzbdv7MiT9fjg7ApC2Fyf2F67PWww5Trm6A7W1BSn \
+        400000000 \
+        "2022-05-08 09:00" \
+        --max-entrants 750 \
+        --provider.cluster mainnet \
+        --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
+        --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
+
+# SOL RAFFLE 0.1 SOL ticket
 target/debug/draffle create-raffle \
         So11111111111111111111111111111111111111112 \
         100000000 \
-        "2022-04-30 12:45" \
-        --max-entrants 750 \
+        "2022-05-08 09:00" \
+        --max-entrants 100 \
         --provider.cluster devnet \
         --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
         --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
 
+# QUACK RAFFLE
 target/debug/draffle add-prize \
-        3kTRXdm2xKejFkNfKxw88GV2cGZaASfkjysJ48fwNsYJ \
-        GydV1CJPbNwMpdPenx5pJUEW51SDoHjHF1WmQBZuchQn \
-        1 \
+        82xVRf14XznUbj4TQaLzLQnbU8xhmpkdV2GrQtJSVo6Z \
+        4CHXmf6dkqL4pPY1DdmShw5yeow5DTM7mvZ9QXx4WkwD \
+        1000 \
         0 \
         --provider.cluster devnet \
         --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
         --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
 
+# SOL RAFFE
+target/debug/draffle add-prize \
+        EXJPFGP7FSUVdG1zEnbcCDnjpm7QBBsS6uBSRL3wv362 \
+        6UskN8KUyV6vohyvMWFx3GTmKRkgDPKWUcZhHe4sg8Uy \
+        1 \
+        0 \
+        --provider.cluster mainnet \
+        --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
+        --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
+
 target/debug/draffle show-raffle \
-    Aq5cZhbR28TYqt9SVAopGQVq5Q64BLmZE3kURxCHuv3U \
+    5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9 \
     --provider.cluster devnet
 
 target/debug/draffle reveal-winners \
-        C8MksYdZq3jasJoLkuZN6frT9TuZ2STzCkCCDqnrmKhv \
+        5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9 \
         --provider.cluster devnet \
         --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
         --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
 
 target/debug/draffle collect-proceeds \
-        HhppMJ3x9cdNnXPZKJTR8zCzWEmNx5RGLRgx94nt8AKQ \
+        5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9 \
         Czt28u7gMKPy2924adLsCiL9Hg65XqS2GDjDTQuCGNMf \
         --provider.cluster devnet \
         --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
         --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
+
+target/debug/draffle close-entrants \
+    --provider.cluster devnet \
+    --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
+    --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF \
+    5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9
+
+
+friendly floatee BAv57tcPuZhsao3rrdWRfpqXR9MoRX2oqbDZiKvDcV9p
+NoiaDuck 4EmMaYiTcFcVLpmZYFcgh2sZ7R4NP8AmZ81TguUBVX9o
+miners of mars DLAwxav7ZS7GgYPeenw7NZ6TQT1eA87QEfbb8xXG9C5T
+stoned frog 6UskN8KUyV6vohyvMWFx3GTmKRkgDPKWUcZhHe4sg8Uy
+
+lamports per sol 1000000000
+
+devnet test token 6 decimals 4CHXmf6dkqL4pPY1DdmShw5yeow5DTM7mvZ9QXx4WkwD
+
+
+QUACK RAFFLE ID: HpCtUDuAMzsjiZd9bBDbLDrfniw7qAP4CbxwUzobsBFq
+SOL RAFFLE ID: EXJPFGP7FSUVdG1zEnbcCDnjpm7QBBsS6uBSRL3wv362
+
+GenesysGo devnet endpoint: https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/

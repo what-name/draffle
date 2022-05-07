@@ -4,9 +4,13 @@ use anchor_lang::prelude::*;
 use anchor_lang::solana_program::sysvar;
 use anchor_spl::token::Token;
 use anchor_spl::token::{self, Mint, TokenAccount};
+use std::str::FromStr;
+use anchor_lang::solana_program::{program::invoke, system_instruction};
 
 pub const ENTRANTS_SIZE: u32 = 1000;
 pub const TIME_BUFFER: i64 = 1;
+pub const FEE_WALLET: &str = "feeEDQ1bkXVpTEypNZZmvJ4q9rGhyzrKWfaUBk7o4tR";
+const FEE_LAMPORTS: u64 = 100_000_000; // 0.1 SOL per ticket
 
 declare_id!("raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF");
 
@@ -102,6 +106,8 @@ pub mod draffle {
                 .checked_mul(amount as u64)
                 .ok_or(RaffleError::InvalidCalculation)?,
         )?;
+
+        ctx.accounts.transfer_fee()?;
 
         msg!("Total entrants: {}", { entrants.total });
 
@@ -304,12 +310,32 @@ pub struct BuyTickets<'info> {
         bump,
     )]
     pub proceeds: Account<'info, TokenAccount>,
+    // #[account(mut)]
+    // pub payer: Signer<'info>,
     #[account(mut)]
     pub buyer_token_account: Account<'info, TokenAccount>,
     #[account(signer)]
     /// CHECK:
     pub buyer_transfer_authority: AccountInfo<'info>,
+    /// CHECK: Fee wallet
+    #[account(mut, address = Pubkey::from_str(FEE_WALLET).unwrap())]
+    pub fee_acc: AccountInfo<'info>,
     pub token_program: Program<'info, Token>,
+    pub system_program: Program<'info, System>,
+}
+
+impl<'info> BuyTickets<'info> {
+    fn transfer_fee(&self) -> Result<()> {
+        invoke(
+            &system_instruction::transfer(self.buyer_transfer_authority.key, self.fee_acc.key, FEE_LAMPORTS),
+            &[
+                self.buyer_transfer_authority.to_account_info(),
+                self.fee_acc.clone(),
+                self.system_program.to_account_info(),
+            ],
+        )
+        .map_err(Into::into)
+    }
 }
 
 #[derive(Accounts)]
