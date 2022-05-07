@@ -130,6 +130,7 @@ export const buyTickets = async (
     finalBuyerAccount = buyerIntermediaryTokenAccount;
   }
 
+  // LOOK HERE
   instructions.push(
     draffleClient.instruction.buyTickets(ticketAmount, {
       accounts: {
@@ -138,7 +139,10 @@ export const buyTickets = async (
         proceeds: raffle.proceeds.address,
         buyerTokenAccount: finalBuyerAccount,
         buyerTransferAuthority: draffleClient.provider.wallet.publicKey,
+        payer: draffleClient.provider.wallet.publicKey,
         tokenProgram: TOKEN_PROGRAM_ID,
+        systemProgram:
+        feeAcc:
       },
     })
   );

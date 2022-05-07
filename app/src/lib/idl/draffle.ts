@@ -145,7 +145,17 @@ export type Draffle = {
           "isSigner": true
         },
         {
+          "name": "feeAcc",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
           "isMut": false,
           "isSigner": false
         }
@@ -328,7 +338,7 @@ export type Draffle = {
             "type": {
               "array": [
                 "publicKey",
-                5000
+                1000
               ]
             }
           }
@@ -557,7 +567,17 @@ export const IDL: Draffle = {
           "isSigner": true
         },
         {
+          "name": "feeAcc",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
           "isMut": false,
           "isSigner": false
         }
@@ -740,7 +760,7 @@ export const IDL: Draffle = {
             "type": {
               "array": [
                 "publicKey",
-                5000
+                1000
               ]
             }
           }

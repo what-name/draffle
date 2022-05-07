@@ -9,6 +9,9 @@ const testWhitelist = new Map<string, RaffleMetaData>([
   ['3kTRXdm2xKejFkNfKxw88GV2cGZaASfkjysJ48fwNsYJ', { name: 'SOL Raffle' }],
   ['HhppMJ3x9cdNnXPZKJTR8zCzWEmNx5RGLRgx94nt8AKQ', { name: 'SOL Raffle 2' }],
   ['5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9', { name: 'MEME Raffle' }],
+  ['87tHbpHkA4nWuGgQWcJ7hJH49cyzSyhUU4LKuMALkW8b', { name: 'QUACK Test Raffle' }],
+  ['EXJPFGP7FSUVdG1zEnbcCDnjpm7QBBsS6uBSRL3wv362', { name: 'SOL Raffle' }],
+  ['82xVRf14XznUbj4TQaLzLQnbU8xhmpkdV2GrQtJSVo6Z', { name: 'premature Raffle' }],
   // [
   //   '9FoUjfUpWwhHYaGKM9G5eYab7qow3oWqdo2G5Ehj3h5L',
   //   {
