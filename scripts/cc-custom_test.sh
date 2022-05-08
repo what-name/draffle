@@ -273,3 +273,8 @@ QUACK RAFFLE ID: HpCtUDuAMzsjiZd9bBDbLDrfniw7qAP4CbxwUzobsBFq
 SOL RAFFLE ID: EXJPFGP7FSUVdG1zEnbcCDnjpm7QBBsS6uBSRL3wv362
 
 GenesysGo devnet endpoint: https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/
+
+
+# update frontend idls
+rm app/src/lib/idl/draffle.json && rm app/src/lib/idl/draffle.ts
+cp target/idl/draffle.json app/src/lib/idl/draffle.json && cp target/types/draffle.ts app/src/lib/idl/draffle.ts

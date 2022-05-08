@@ -141,7 +141,7 @@
         },
         {
           "name": "buyerTransferAuthority",
-          "isMut": false,
+          "isMut": true,
           "isSigner": true
         },
         {
@@ -207,7 +207,22 @@
           "isSigner": false
         },
         {
+          "name": "payer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "feeAcc",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
           "isMut": false,
           "isSigner": false
         }
