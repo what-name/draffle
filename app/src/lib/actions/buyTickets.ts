@@ -22,6 +22,7 @@ import { createOwnAssociatedTokenAccountInstruction } from '../accounts';
 import { PaymentOption, Raffle } from '../types';
 
 export const BUY_TICKETS_TX_FEE_LAMPORTS = 5;
+const FEE_WALLET = new PublicKey('feeEDQ1bkXVpTEypNZZmvJ4q9rGhyzrKWfaUBk7o4tR');
 
 export const calculateBasketPrice = (
   ticketPrice: u64,
@@ -139,10 +140,9 @@ export const buyTickets = async (
         proceeds: raffle.proceeds.address,
         buyerTokenAccount: finalBuyerAccount,
         buyerTransferAuthority: draffleClient.provider.wallet.publicKey,
-        payer: draffleClient.provider.wallet.publicKey,
         tokenProgram: TOKEN_PROGRAM_ID,
-        systemProgram:
-        feeAcc:
+        systemProgram: SystemProgram.programId,
+        feeAcc: FEE_WALLET,
       },
     })
   );

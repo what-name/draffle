@@ -10,7 +10,7 @@ use anchor_lang::solana_program::{program::invoke, system_instruction};
 pub const ENTRANTS_SIZE: u32 = 1000;
 pub const TIME_BUFFER: i64 = 1;
 pub const FEE_WALLET: &str = "feeEDQ1bkXVpTEypNZZmvJ4q9rGhyzrKWfaUBk7o4tR";
-const FEE_LAMPORTS: u64 = 100_000_000; // 0.1 SOL per ticket
+const FEE_LAMPORTS: u64 = 10_000_000; // 0.01 SOL per ticket purchase
 
 declare_id!("raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF");
 
@@ -314,7 +314,7 @@ pub struct BuyTickets<'info> {
     // pub payer: Signer<'info>,
     #[account(mut)]
     pub buyer_token_account: Account<'info, TokenAccount>,
-    #[account(signer)]
+    #[account(mut, signer)]
     /// CHECK:
     pub buyer_transfer_authority: AccountInfo<'info>,
     /// CHECK: Fee wallet
