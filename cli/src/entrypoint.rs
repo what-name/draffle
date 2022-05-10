@@ -52,8 +52,6 @@ pub enum Command {
         entrants_keypair: Option<String>,
         #[clap(long = "max-entrants")]
         max_entrants: Option<u32>,
-        // #[clap(default_value = FEE_WALLET)]
-        // fee_acc: Pubkey,
     },
     /// Adds a prize to a raffle.
     AddPrize {
