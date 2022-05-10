@@ -31,6 +31,11 @@ export type Draffle = {
           "isSigner": false
         },
         {
+          "name": "feeAcc",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "systemProgram",
           "isMut": false,
           "isSigner": false
@@ -465,6 +470,11 @@ export const IDL: Draffle = {
         {
           "name": "proceedsMint",
           "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "feeAcc",
+          "isMut": true,
           "isSigner": false
         },
         {

@@ -21,9 +21,9 @@ const tokenRegistry = {
   '29a6AWBP44QUnfZKNpWSU7tkfrfDBym94EtCZBPvJ2ao': {
     chainId: 101,
     address: '29a6AWBP44QUnfZKNpWSU7tkfrfDBym94EtCZBPvJ2ao',
-    symbol: '$TT',
-    name: 'TEST TOKEN',
-    decimals: 6,
+    symbol: '$A',
+    name: 'A TOKEN',
+    decimals: 9,
     logoURI:
       'https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/9nusLQeFKiocswDt6NQsiErm1M43H2b8x6v5onhivqKv/logo.png',
     tags: [],

@@ -207,9 +207,9 @@ target/debug/draffle create-raffle \
 
 # SOL RAFFLE 0.1 SOL ticket
 target/debug/draffle create-raffle \
-        So11111111111111111111111111111111111111112 \
+        29a6AWBP44QUnfZKNpWSU7tkfrfDBym94EtCZBPvJ2ao \
         100000000 \
-        "2022-05-08 09:00" \
+        "2022-05-12 09:00" \
         --max-entrants 100 \
         --provider.cluster devnet \
         --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
@@ -217,9 +217,9 @@ target/debug/draffle create-raffle \
 
 # QUACK RAFFLE
 target/debug/draffle add-prize \
-        82xVRf14XznUbj4TQaLzLQnbU8xhmpkdV2GrQtJSVo6Z \
-        4CHXmf6dkqL4pPY1DdmShw5yeow5DTM7mvZ9QXx4WkwD \
-        1000 \
+        2yL3G9UuT9sEXJkSa67mnur2cjnteVRpCZRfSeNXvED4 \
+        2mz14npWeBD5SgunTxL2V5bJtrn6QDW6NQkcVDkSHYLb \
+        1 \
         0 \
         --provider.cluster devnet \
         --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
@@ -236,7 +236,7 @@ target/debug/draffle add-prize \
         --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
 
 target/debug/draffle show-raffle \
-    5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9 \
+    2yL3G9UuT9sEXJkSa67mnur2cjnteVRpCZRfSeNXvED4 \
     --provider.cluster devnet
 
 target/debug/draffle reveal-winners \

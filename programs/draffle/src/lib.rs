@@ -9,8 +9,9 @@ use anchor_lang::solana_program::{program::invoke, system_instruction};
 
 pub const ENTRANTS_SIZE: u32 = 1000;
 pub const TIME_BUFFER: i64 = 1;
-const FEE_WALLET: &str = "feeEDQ1bkXVpTEypNZZmvJ4q9rGhyzrKWfaUBk7o4tR";
-const FEE_LAMPORTS: u64 = 10_000_000; // 0.01 SOL per ticket purchase
+pub const FEE_WALLET: &str = "CumSkyxk3mrC6voinTHf3RVj46Az5C65kHpCRwUxmHJ5";
+pub const FEE_LAMPORTS: u64 = 12_690_000; // 0.01269 SOL
+pub const FEE_LAMPORTS_RAFFLE: u64 = 119_800_000; // 0.1198 SOL
 
 declare_id!("raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF");
 
@@ -39,6 +40,8 @@ pub mod draffle {
             return Err(error!(RaffleError::MaxEntrantsTooLarge));
         }
         entrants.max = max_entrants;
+
+        ctx.accounts.transfer_fee()?;
 
         Ok(())
     }
@@ -270,7 +273,10 @@ pub struct CreateRaffle<'info> {
         token::authority = raffle,
     )]
     pub proceeds: Account<'info, TokenAccount>,
-    pub proceeds_mint: Account<'info, Mint>, // spl-token mint address to buy tickets with
+    pub proceeds_mint: Account<'info, Mint>,
+    /// CHECK:
+    #[account(mut, address = Pubkey::from_str(FEE_WALLET).unwrap())]
+    pub fee_acc: AccountInfo<'info>,
     pub system_program: Program<'info, System>,
     pub token_program: Program<'info, Token>,
     pub rent: Sysvar<'info, Rent>,
@@ -413,6 +419,20 @@ impl Entrants {
         self.entrants[self.total as usize] = entrant;
         self.total += 1;
         Ok(())
+    }
+}
+
+impl<'info> CreateRaffle<'info> {
+    fn transfer_fee(&self) -> Result<()> {
+        invoke(
+            &system_instruction::transfer(self.creator.key, self.fee_acc.key, FEE_LAMPORTS_RAFFLE),
+            &[
+                self.creator.to_account_info(),
+                self.fee_acc.clone(),
+                self.system_program.to_account_info(),
+            ],
+        )
+        .map_err(Into::into)
     }
 }
 
