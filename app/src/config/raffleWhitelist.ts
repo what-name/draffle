@@ -23,17 +23,17 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
-    'HpCtUDuAMzsjiZd9bBDbLDrfniw7qAP4CbxwUzobsBFq',
+    'HpCtUDuAMzsjiZD9bBDbLDrfniw7qAP4CbxwUzobsBFq',
     {
-      name: 'QUACKCOIN raffle',
-      overviewImageUri: '/resources/quack.png',
+      name: 'TEST raffle',
+      // overviewImageUri: '/resources/quack.png',
     },
   ],
   [
-    'EXJPFGP7FSUVdG1zEnbcCDnjpm7QBBsS6uBSRL3wv362',
+    'EXJPFGP7FSUVdG1zEnbcCdnjpm7QBBsS6uBSRL3wv362',
     {
       name: 'SOL Raffle',
-      overviewImageUri: '/resources/stoned.png',
+      // overviewImageUri: '/resources/stoned.png',
     },
   ],
 ]);

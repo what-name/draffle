@@ -9,7 +9,7 @@ import Screen from '../../components/layout/Screen';
 import { Raffle } from '../../lib/types';
 import { useViewport } from '../../hooks/useViewport';
 import FilterBar from './components/FilterBar';
-import floateesLogo from '../../assets/floateesLogo.gif';
+import topLogo from '../../assets/topLogo.gif';
 
 const ExploreRafflesScreen: FC = () => {
   console.log(process.env.NODE_ENV);
