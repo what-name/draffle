@@ -190,20 +190,8 @@ solana-test-validator \
 
 
 
-
 spl-token 29a6AWBP44QUnfZKNpWSU7tkfrfDBym94EtCZBPvJ2ao (deployer-keypair authority)
-raffle address CU7ZkyUfKnxYjUY1Lo71sez2D1AJLqGoTbWtuUAst1qq (ended, still)
-raffle address Aq5cZhbR28TYqt9SVAopGQVq5Q64BLmZE3kURxCHuv3U
 
-# QUACK RAFFLE
-target/debug/draffle create-raffle \
-        ENNuzbdv7MiT9fjg7ApC2Fyf2F67PWww5Trm6A7W1BSn \
-        400000000 \
-        "2022-05-08 09:00" \
-        --max-entrants 750 \
-        --provider.cluster mainnet \
-        --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
-        --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
 
 # SOL RAFFLE 0.1 SOL ticket
 target/debug/draffle create-raffle \
@@ -211,16 +199,6 @@ target/debug/draffle create-raffle \
         100000000 \
         "2022-05-12 09:00" \
         --max-entrants 100 \
-        --provider.cluster devnet \
-        --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
-        --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
-
-# QUACK RAFFLE
-target/debug/draffle add-prize \
-        2yL3G9UuT9sEXJkSa67mnur2cjnteVRpCZRfSeNXvED4 \
-        2mz14npWeBD5SgunTxL2V5bJtrn6QDW6NQkcVDkSHYLb \
-        1 \
-        0 \
         --provider.cluster devnet \
         --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
         --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
@@ -240,7 +218,7 @@ target/debug/draffle show-raffle \
     --provider.cluster devnet
 
 target/debug/draffle reveal-winners \
-        5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9 \
+        2yL3G9UuT9sEXJkSa67mnur2cjnteVRpCZRfSeNXvED4 \
         --provider.cluster devnet \
         --provider.wallet operations/PerrXcLkieKrGRuodwhYikfnYJi9cTNiRyK5hrufjXy.json \
         --program-id raFv43GLKy2ySi5oVExZxFGwdbKRRaDQBqikiY9YbVF
@@ -259,18 +237,10 @@ target/debug/draffle close-entrants \
     5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9
 
 
-friendly floatee BAv57tcPuZhsao3rrdWRfpqXR9MoRX2oqbDZiKvDcV9p
-NoiaDuck 4EmMaYiTcFcVLpmZYFcgh2sZ7R4NP8AmZ81TguUBVX9o
-miners of mars DLAwxav7ZS7GgYPeenw7NZ6TQT1eA87QEfbb8xXG9C5T
-stoned frog 6UskN8KUyV6vohyvMWFx3GTmKRkgDPKWUcZhHe4sg8Uy
-
 lamports per sol 1000000000
 
 devnet test token 6 decimals 4CHXmf6dkqL4pPY1DdmShw5yeow5DTM7mvZ9QXx4WkwD
 
-
-QUACK RAFFLE ID: HpCtUDuAMzsjiZd9bBDbLDrfniw7qAP4CbxwUzobsBFq
-SOL RAFFLE ID: EXJPFGP7FSUVdG1zEnbcCDnjpm7QBBsS6uBSRL3wv362
 
 GenesysGo devnet endpoint: https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899/
 
