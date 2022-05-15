@@ -3,18 +3,12 @@ import { RaffleMetaData } from '../lib/types';
 import { TESTING } from './misc';
 
 const testWhitelist = new Map<string, RaffleMetaData>([
-  ['CU7ZkyUfKnxYjUY1Lo71sez2D1AJLqGoTbWtuUAst1qq', { name: 'Simple Raffle' }],
-  ['Aq5cZhbR28TYqt9SVAopGQVq5Q64BLmZE3kURxCHuv3U', { name: 'Second Raffle' }],
-  ['C8MksYdZq3jasJoLkuZN6frT9TuZ2STzCkCCDqnrmKhv', { name: 'Third Raffle' }],
-  ['3kTRXdm2xKejFkNfKxw88GV2cGZaASfkjysJ48fwNsYJ', { name: 'SOL Raffle' }],
-  ['HhppMJ3x9cdNnXPZKJTR8zCzWEmNx5RGLRgx94nt8AKQ', { name: 'SOL Raffle 2' }],
-  ['5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9', { name: 'MEME Raffle' }],
-  ['87tHbpHkA4nWuGgQWcJ7hJH49cyzSyhUU4LKuMALkW8b', { name: 'QUACK Test Raffle' }],
-  ['EXJPFGP7FSUVdG1zEnbcCDnjpm7QBBsS6uBSRL3wv362', { name: 'SOL Raffle' }],
-  ['82xVRf14XznUbj4TQaLzLQnbU8xhmpkdV2GrQtJSVo6Z', { name: 'premature Raffle' }],
-  ['3d4BuwVng31HHhZFhQJduCJ6tXydJou5Ei1r5sjWHnn9', { name: 'fee Raffle' }],
-  ['E2GjQGMw2gmzj8b3N2QNDZTrHP5xLjk1P5VQAjyx9caG', { name: 'fee Raffle 2' }],
-  ['2yL3G9UuT9sEXJkSa67mnur2cjnteVRpCZRfSeNXvED4', { name: 'fee Raffle 3' }],
+  // ['CU7ZkyUfKnxYjUY1Lo71sez2D1AJLqGoTbWtuUAst1qq', { name: 'Simple Raffle' }],
+  // ['Aq5cZhbR28TYqt9SVAopGQVq5Q64BLmZE3kURxCHuv3U', { name: 'Second Raffle' }],
+  // ['C8MksYdZq3jasJoLkuZN6frT9TuZ2STzCkCCDqnrmKhv', { name: 'Third Raffle' }],
+  // ['3kTRXdm2xKejFkNfKxw88GV2cGZaASfkjysJ48fwNsYJ', { name: 'SOL Raffle' }],
+  // ['HhppMJ3x9cdNnXPZKJTR8zCzWEmNx5RGLRgx94nt8AKQ', { name: 'SOL Raffle 2' }],
+  // ['5Po1nyZ9UAQzjS2KdV8b6Lwk3y9hwxrL1po2dvfn6dr9', { name: 'MEME Raffle' }],
   // [
   //   '9FoUjfUpWwhHYaGKM9G5eYab7qow3oWqdo2G5Ehj3h5L',
   //   {
@@ -29,56 +23,19 @@ const testWhitelist = new Map<string, RaffleMetaData>([
 
 const prodWhitelist = new Map<string, RaffleMetaData>([
   [
-    'FnHwnXGBz7NRZEsT8u12pE2cxURt8mYHQZykzmRtjb27',
+    'HpCtUDuAMzsjiZd9bBDbLDrfniw7qAP4CbxwUzobsBFq',
     {
-      name: 'dRaffle launch raffle',
-      overviewImageUri: '/resources/001-mainnet-launch.gif',
+      name: 'QUACKCOIN raffle',
+      overviewImageUri: '/resources/quack.png',
     },
   ],
   [
-    '2QjkshNu3mrcCnriekTpppa3PFwnAR9Yf7v5vc54m2Yh',
+    'EXJPFGP7FSUVdG1zEnbcCDnjpm7QBBsS6uBSRL3wv362',
     {
-      name: 'First SOL raffle',
-      overviewImageUri: '/resources/solana-logo.gif',
+      name: 'SOL Raffle',
+      overviewImageUri: '/resources/stoned.png',
     },
   ],
-  [
-    '8aEm1MoDqkYT5vCB21jC6aMMcMbdQJgmHpyBbtHDfUjU',
-    {
-      name: 'Anti Artist Club',
-      overviewImageUri: '/resources/aartist-raffle-overview.gif',
-    }
-  ],
-  [
-    '2ziwAj4awgvNyn8ywwjkBRkBsmv259u9vVyEdrGYTb54',
-    {
-      name: 'More SOL',
-      overviewImageUri: '/resources/solana-logo.gif',
-    }
-  ],
-  [
-    'EgHys3WPcM5WRpKqVHs1REfK6Npzq9sJ7dZPFPzQy2xG',
-    {
-      name: 'Triple SOL',
-      overviewImageUri: '/resources/solana-logo-x3.gif'
-    }
-  ],
-  [
-    'CjzFZfrMW4D1jZVm5upCobRi96UYnQTk5cescSt12rhV',
-    {
-      name: 'SAMO raffle',
-      overviewImageUri: '/resources/samo-x3.gif'
-    }
-  ],
-  [
-    'EZtBKgWq66KT4jRKtd4VT3LWh3mVC4pwcCsqLzKas63G',
-    {
-      name: 'BitBoat raffle',
-      overviewImageUri: '/resources/bitboat-raffle.gif'
-    }
-  ]
 ]);
 
-export const RAFFLES_WHITELIST = TESTING
-  ? testWhitelist
-  : prodWhitelist;
+export const RAFFLES_WHITELIST = TESTING ? testWhitelist : prodWhitelist;
